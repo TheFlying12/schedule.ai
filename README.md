@@ -1,97 +1,114 @@
 # Schedule.ai
 
-An AI-powered scheduling application that takes natural language input and updates your calendar.
+An AI-powered scheduling application that converts natural language into calendar events.
 
-## Features
+![License](https://img.shields.io/github/license/yourusername/schedule.ai)
+![Python](https://img.shields.io/badge/python-3.8+-blue.svg)
 
-- Process natural language input to understand scheduling requests
-- Create calendar events in iCalendar format
-- Distinguish between blocking time and specific events
-- Supports both API and CLI interfaces
+## 🌟 Features
 
-## Getting Started
+- 📝 **Natural Language Processing**: Type scheduling requests in plain English
+- 🗓️ **Calendar Integration**: Creates standard iCalendar files compatible with most calendar apps
+- 🚫 **Blocking Time**: Distinguish between focused work blocks and regular events
+- 💻 **Multiple Interfaces**: Use via command line, API, or GUI (coming soon)
 
-### Prerequisites
+## 📋 Quick Start Guide
 
-- Python 3.8+
-- OpenAI API key
-
-### Installation Options
-
-#### Option 1: Install from PyPI (for end users)
+### Option 1: Install with pip (Easiest)
 
 ```bash
-# Install the package
+# Install from PyPI
 pip install scheduleai
 
-# Set up configuration (first-time setup)
+# Run first-time setup
 scheduleai --setup
+
+# Start scheduling!
+scheduleai "Meeting with marketing team tomorrow at 2pm for 1 hour"
 ```
 
-#### Option 2: Install from GitHub (for developers)
+### Option 2: Download the App
 
-1. Clone the repository
-2. Install in development mode:
-   ```bash
-   pip install -e .
-   ```
-3. Create a `.env` file with your OpenAI API key:
-   ```
-   OPENAI_API_KEY=your_api_key_here
-   CALENDAR_PATH=/path/to/your/calendar.ics
-   ```
+Visit our [Releases page](https://github.com/yourusername/schedule.ai/releases) to download:
+- Windows: `scheduleai-windows.exe`
+- macOS: `scheduleai-macos.dmg`
+- Linux: `scheduleai-linux.deb`
 
-#### Option 3: Standalone Application (for non-technical users)
-
-Download the standalone application for your platform:
-- [Windows Installer (.exe)](https://github.com/yourusername/schedule.ai/releases)
-- [macOS Application (.dmg)](https://github.com/yourusername/schedule.ai/releases)
-- [Linux Package (.deb/.rpm)](https://github.com/yourusername/schedule.ai/releases)
-
-## Usage
-
-### Command Line Interface
-
-The CLI allows you to quickly add events from the terminal:
+### Option 3: Clone the Repository (For Developers)
 
 ```bash
-# Direct command
-python src/cli.py "Block time for working on project tomorrow from 2-4pm"
+# Clone repo
+git clone https://github.com/yourusername/schedule.ai.git
+cd schedule.ai
+
+# Install in development mode
+pip install -e .
+
+# Create config file
+cp .env.example .env
+# Edit .env with your OpenAI API key
+
+# Run the app
+scheduleai -i
+```
+
+## 💡 Usage Examples
+
+### Command Line
+
+```bash
+# Add a simple event
+scheduleai "Doctor appointment on Friday at 3pm"
+
+# Block time for focused work
+scheduleai "Block 2 hours tomorrow morning for project work"
 
 # Interactive mode
-python src/cli.py -i
+scheduleai -i
 
-# Show detailed output
-python src/cli.py -v "Meeting with team at 3pm Thursday"
+# Show detailed information
+scheduleai -v "Team standup every weekday at 9:30am"
 ```
 
-### Web API
-
-Start the FastAPI server:
+### API
 
 ```bash
+# Start the API server
 python main.py
-```
 
-The API will be available at http://localhost:8000
-
-Send a POST request to `/schedule` with your natural language text:
-
-```bash
+# In another terminal, use curl to add events
 curl -X POST "http://localhost:8000/schedule" \
      -H "Content-Type: application/json" \
-     -d '{"text":"Block time for working on project tomorrow from 2-4pm"}'
+     -d '{"text":"Lunch with Alex on Thursday at noon"}'
 ```
 
-## Examples
+## 📅 Calendar Integration
 
-Here are some examples of the natural language inputs you can use:
+Schedule.ai creates standard `.ics` files that you can import into:
+- Google Calendar
+- Apple Calendar
+- Microsoft Outlook
+- And most other calendar applications
 
-- "Block off 3-5pm tomorrow for focused work"
-- "Schedule a meeting with marketing team on Friday from 10-11am"
-- "Add doctor appointment next Monday at 2pm for 45 minutes"
-- "Block time for gym every weekday from 7-8am"
+By default, your calendar is stored at:
+- Windows: `%APPDATA%\ScheduleAI\schedule.ics`
+- macOS: `~/Library/Application Support/ScheduleAI/schedule.ics`
+- Linux: `~/.config/scheduleai/schedule.ics`
 
-## Contributing
+## 🔑 Requirements
 
-Contributions are welcome! Please feel free to submit a Pull Request.
+- Python 3.8+
+- OpenAI API key ([get one here](https://platform.openai.com/api-keys))
+
+## 🤝 Contributing
+
+Contributions are welcome! Feel free to:
+1. Fork the repository
+2. Create a feature branch: `git checkout -b new-feature`
+3. Commit your changes: `git commit -am 'Add new feature'`
+4. Push to the branch: `git push origin new-feature`
+5. Submit a pull request
+
+## 📜 License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
