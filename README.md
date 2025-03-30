@@ -2,7 +2,7 @@
 
 An AI-powered scheduling application that converts natural language into calendar events.
 
-![License](https://img.shields.io/github/license/yourusername/schedule.ai)
+![License](https://img.shields.io/github/license/TheFlying12/schedule.ai)
 ![Python](https://img.shields.io/badge/python-3.8+-blue.svg)
 
 ## 🌟 Features
@@ -29,7 +29,7 @@ scheduleai "Meeting with marketing team tomorrow at 2pm for 1 hour"
 
 ### Option 2: Download the App
 
-Visit our [Releases page](https://github.com/yourusername/schedule.ai/releases) to download:
+Visit our [Releases page](https://github.com/TheFlying12/schedule.ai/releases) to download:
 - Windows: `scheduleai-windows.exe`
 - macOS: `scheduleai-macos.dmg`
 - Linux: `scheduleai-linux.deb`
@@ -38,7 +38,7 @@ Visit our [Releases page](https://github.com/yourusername/schedule.ai/releases) 
 
 ```bash
 # Clone repo
-git clone https://github.com/yourusername/schedule.ai.git
+git clone https://github.com/TheFlying12/schedule.ai.git
 cd schedule.ai
 
 # Install in development mode
