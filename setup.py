@@ -5,14 +5,17 @@ with open("README.md", "r", encoding="utf-8") as fh:
 
 setup(
     name="scheduleai",
-    version="0.1.0",
+    version="0.1.2",  # Updated version
     author="Schedule.ai Team",
     author_email="your.email@example.com",
     description="AI-powered scheduling application",
     long_description=long_description,
     long_description_content_type="text/markdown",
     url="https://github.com/TheFlying12/schedule.ai",
-    packages=find_packages(),
+    packages=["src", "src.ai", "src.api", "src.calendar", "src.utils"],  # Explicitly list packages
+    package_data={
+        "": ["*.md", "*.txt", "*.example"],
+    },
     include_package_data=True,
     install_requires=[
         "fastapi>=0.104.1",
